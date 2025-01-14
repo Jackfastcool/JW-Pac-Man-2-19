@@ -16,11 +16,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody1.velocity = moveVal * velocity;
+        rigidbody1.velocity = moveVal * velocity; //sets velocity according to the input
     }
 
     Vector2 moveVal;
-    void OnMove(InputValue val)
+    void OnMove(InputValue val) //gets value from input and sticks it in a vec2 variable
     {
         moveVal = val.Get<Vector2>();
     }
