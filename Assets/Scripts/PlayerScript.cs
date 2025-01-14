@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D rigidbody1;
+    [SerializeField] float velocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,12 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rigidbody1.velocity = moveVal * velocity;
+    }
+
+    Vector2 moveVal;
+    void OnMove(InputValue val)
+    {
+        moveVal = val.Get<Vector2>();
     }
 }
