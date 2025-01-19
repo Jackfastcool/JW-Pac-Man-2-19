@@ -10,12 +10,18 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] Collider2D collider1;
     [SerializeField] int enemyMode; // 1 - random direction once hit wall | 2 - follow player directly
     [SerializeField] float veloctiy;
+    [SerializeField] float vunerableTime;
 
     float currentRotation;
+    bool vunerable;
+
+    SpriteRenderer spriteRenderer;
 
     // Awake is called when the object is created
     void Awake()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        // finds the SpriteRenderer on this gameObject
     }
 
     // Update is called once per frame
@@ -43,7 +49,31 @@ public class EnemyScript : MonoBehaviour
         }
 
         rigidbody1.velocity = gameObject.transform.up * veloctiy;
+
+        if (vunerable)
+        {
+            spriteRenderer.color = Color.cyan;
+            if (collider1.IsTouchingLayers(LayerMask.GetMask("Player")))
+            {
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            spriteRenderer.color = Color.HSVToRGB(0.06f, 1, 1);
+        }
+        // sets the sprite colour to a blue to indicate vunerability according to the vunerable variable.
+
     }
 
-    
+    public void SetVunerable(bool input)
+    {
+        vunerable = input;
+        StartCoroutine(ResetVunerable());
+    }
+    IEnumerator ResetVunerable()
+    {
+        yield return new WaitForSeconds(vunerableTime);
+        SetVunerable(false);
+    }
 }
