@@ -2742,6 +2742,7 @@ MonoBehaviour:
   rigidbody1: {fileID: 1172953144}
   velocity: 5
   collider1: {fileID: 1172953143}
+  lives: 3
 --- !u!212 &1172953141
 SpriteRenderer:
   m_ObjectHideFlags: 0
