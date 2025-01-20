@@ -26,9 +26,9 @@ public class PlayerScript : MonoBehaviour
 
         if (collider1.IsTouchingLayers(LayerMask.GetMask("Pickup")))
         {
-            print("collectible detected");
+            //print("collectible detected");
             enemyList = GameObject.FindGameObjectsWithTag("Enemy");
-            print(enemyList);
+            //print(enemyList);
             foreach (GameObject enemy in enemyList)
             {
                 enemy.GetComponent<EnemyScript>().SetVunerable(true);

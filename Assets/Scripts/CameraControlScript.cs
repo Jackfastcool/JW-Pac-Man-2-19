@@ -37,7 +37,7 @@ public class CameraControlScript : MonoBehaviour
         {
             if (collider1.IsTouchingLayers(LayerMask.GetMask("Player")))
             {
-                print("player detected.");
+                //print("player detected.");
                 GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraControlScript>().SetCameraLocation(setLocationX, setLocationY);
             }
         }
