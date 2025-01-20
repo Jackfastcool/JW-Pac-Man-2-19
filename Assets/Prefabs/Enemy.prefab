@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3471746898435042689}
   - component: {fileID: 3471746898435042693}
   - component: {fileID: 3471746898435042694}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   collider1: {fileID: 3471746898435042694}
   enemyMode: 1
   veloctiy: 1
-  vunerableTime: 0
+  vunerableTime: 10
 --- !u!50 &3471746898435042693
 Rigidbody2D:
   serializedVersion: 4
