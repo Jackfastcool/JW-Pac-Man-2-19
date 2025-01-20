@@ -88,4 +88,8 @@ public class EnemyScript : MonoBehaviour
         SetVunerable(false);
     }
     // timed reset for the vunerable state.
+    // NOTE: strange bug that is repeateable that should not be happening: the more powerups collected the less time
+    // spent in the vunerable state? seems to be decently random too - possibly something to calling the coroutine
+    // multiple times? something to do with a unity issue?
+    // problem is that I've checked the code MULTIPLE times and this has no reason at all to happen.
 }

@@ -24,7 +24,7 @@ public class PickupScript : MonoBehaviour
     {
         if (collider1.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
-            GameObject.Destroy(this.gameObject, 0.0001f);
+            GameObject.Destroy(this.gameObject, Time.deltaTime);
             // NOTE: there is a time delay (close to one frame) on the destroy because of unity's update orders.
         }
     }
