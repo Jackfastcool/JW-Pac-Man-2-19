@@ -55,8 +55,10 @@ public class PlayerScript : MonoBehaviour
     {
         lives -= 1;
         gameObject.transform.position = new Vector2(-0.5f, 0);
+        GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraControlScript>().SetCameraLocation(0, 0);
     }
     // takes away one life and resets the position of the player to take them out of danger.
+    // resets the CameraController position to the first room.
 
     public int GetLives()
     {
